@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: center;
+}
+
+header {background: black;color:white;}
+footer {background: #aaa;color:white;}
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+ padding: 0;
+}
+   
+.nav ul a {
+ text-decoration: none;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button1 {
+    background-color: #FFE4E1; /* MistyRose */
+    border: none;
+    color: grey;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button2 {
+    background-color: #FFE4E1; /* MistyRose */
+    border: none;
+    color: grey;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.input {
+    background-color: #DCDCDC; /* Gainsboro */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+progress[value] {
+  width: 1000px;
+  height: 20px;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+<header>
+  <h1>$167 still needed</h1>
+</header>
+
+
+
+
+<article class="article">
+
+  <progress id="p1" max="1000" value="600">83%</progress>
+
+  <h1><span style="color:orange;">Only 3 days left</span><span style="color:grey;"> to fund this project.</span></h1>
+  </br>
+  <h3 style="color:grey;">Join the 42 other donors who have already supported this project. Every dollar helps.</h3>
+  </br>
+  <span>$</span><input class="input" id ="TextBox" type="text" name="TextBox" max="1000" min = "50" value="50"></input>  <input type="button" id='AddButton' class="button" value="Give Now" onClick='incr();'></input>
+
+<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>  
+<script>
+            $(document).ready(function(){
+                $('#AddButton').click( function() {
+                    var counter = $('#TextBox').val();
+                    counter++ ;
+                    $('#TextBox').val(counter);
+                });
+            });
+        </script>
+<script language=JavaScript> 
+function incr() { 
+var v1=document.getElementById('p1').value;
+document.getElementById("p1").value= v1 + 10;
+}
+
+</script>
+  <h3 style="color:SteelBlue;"><i>Why Give $50 ?</i></h3>
+  </br>
+  </br>
+  <button class="button1" type="button" onclick="alert('Saved!')">Save for later</button>
+  <button class="button2" type="button" onclick="window.open('https://www.facebook.com/maddyreddy.k.a');">Tell your Friends</button>
+
+</article>
+
+<footer>Copyright © Madhu Appojireddy</footer>
+</div>
+
+</body>
+</html>
